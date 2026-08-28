@@ -101,7 +101,7 @@ footer{color:var(--mut);font-size:12.5px;text-align:center;padding:22px 0 40px;l
   <div class="hero">
     <div class="gradecard gc-C">
       <div class="bigletter bl-C">C</div>
-      <div class="score100">61 / 100</div>
+      <div class="score100">68 / 100</div>
     </div>
     <div class="heroread">
       <h2>Your tracking tells Google that every enquiry you get is worth exactly $100.</h2>
@@ -186,22 +186,26 @@ In your sitemap       <span class="ph">not listed (7 pages, none of them a thank
   </section>
 
   <section>
-    <div class="h">Finding 3 &mdash; There Is No Analytics At All</div>
-    <div class="flag">
-      <div class="lab">Searched the live page and the full tag manager container</div>
-      <div class="code">Google Ads     <span class="ok">connected (AW-17972349451)</span>
-Google Analytics 4  <span class="ph">not present anywhere</span>
-Meta pixel          <span class="ph">not present</span>
-Microsoft / Bing    <span class="ph">not present</span></div>
-      <p><b>You have the scoreboard without the match.</b> Google Ads will tell you a conversion
-      happened. Nothing on the site can tell you what the person did before it &mdash; which page they
-      landed on, what they read, where the ones who did not enquire dropped out, or whether the traffic
-      is even coming from where you think.</p>
-      <p><b>This matters specifically because of the boundary you set.</b> You do not want the website
-      or the SEO touched, and that is fine &mdash; but it means the only lever we have is the
-      advertising, and right now there is no data to steer it with beyond a conversion count. <b>GA4 is
-      free, sits inside the tag manager that is already there, and changes nothing about how your site
-      looks or ranks.</b></p>
+    <div class="h">Finding 3 &mdash; Your Analytics And Your Ads Live In Two Separate Systems</div>
+    <div class="warn">
+      <div class="lab">Corrected after a second pass &mdash; you have more here than a first look shows</div>
+      <div class="code">Google Analytics 4  <span class="ok">present &mdash; G-JY81LTQ9T0</span>
+Loaded via          <span class="ok">Google tag GT-M34XRWXK</span>
+Google Ads          <span class="ok">AW-17972349451, configured separately in GTM</span>
+Meta / Microsoft    <span class="ph">not present</span></div>
+      <p><b>You do have analytics, and our first pass missed it.</b> It does not appear as a normal GA4
+      tag &mdash; it is routed through a Google tag, GT-M34XRWXK, which forwards to GA4 property
+      G-JY81LTQ9T0. That is a legitimate and current way to set it up. <b>Credit where it is due: this
+      is more measurement than most contractors have.</b></p>
+      <p><b>What is worth confirming is that the two halves are talking to each other.</b> Your
+      analytics arrives through the Google tag; your ad conversions are built separately inside Tag
+      Manager. Both work on their own. <b>Whether GA4 is linked to the ads account &mdash; which is how
+      audiences and quality signals travel between them &mdash; is set inside the accounts and cannot
+      be seen from outside, so we are asking rather than asserting.</b></p>
+      <p><b>The reason it matters for you specifically:</b> the fix for the $100 problem in Finding 1
+      is to send Google something that distinguishes a mulching enquiry from a barndominium. GA4 is the
+      natural place that signal comes from. <b>If the link is already in place, that work is far
+      shorter than it would otherwise be.</b></p>
     </div>
   </section>
 
@@ -267,12 +271,12 @@ Gap   <span class="ok">2 projects &mdash; a 50% increase in revenue, from a hand
     <div class="h">The Scorecard &mdash; Advertising Only</div>
     <div class="grid">
       <div class="row"><div><div class="rname">Conversion value</div><div class="sc">Hard-coded to $100 for every enquiry, on a business running month-long projects.</div></div><div class="badge gF">F</div></div>
-      <div class="row"><div><div class="rname">Analytics</div><div class="sc">No GA4 anywhere on the site or in the container.</div></div><div class="badge gF">F</div></div>
+      <div class="row"><div><div class="rname">Analytics</div><div class="sc">GA4 present (G-JY81LTQ9T0) via Google tag GT-M34XRWXK. Properly in place.</div></div><div class="badge gB">B</div></div>
       <div class="row"><div><div class="rname">Conversion segmentation</div><div class="sc">Eight services, one conversion action. Nothing can be told apart.</div></div><div class="badge gF">F</div></div>
       <div class="row"><div><div class="rname">Form conversion reliability</div><div class="sc">Depends on a /thank-you page we could not reach. Needs verifying.</div></div><div class="badge gD">D&minus;</div></div>
       <div class="row"><div><div class="rname">Enhanced conversions</div><div class="sc">Disabled. Free to enable, and it changes nothing on the site.</div></div><div class="badge gD">D</div></div>
       <div class="row"><div><div class="rname">Value-based bidding readiness</div><div class="sc">Not possible while every conversion carries the same number.</div></div><div class="badge gD">D</div></div>
-      <div class="row"><div><div class="rname">Remarketing / audiences</div><div class="sc">No analytics and no pixel means no audience to build from.</div></div><div class="badge gD">D</div></div>
+      <div class="row"><div><div class="rname">Remarketing / audiences</div><div class="sc">GA4 exists, so audiences are possible. Whether it is linked to Ads is not visible from outside.</div></div><div class="badge gC">C</div></div>
       <div class="row"><div><div class="rname">Cross-platform coverage</div><div class="sc">Google only. No Meta or Microsoft, which may well be correct for you.</div></div><div class="badge gC">C</div></div>
       <div class="row"><div><div class="rname">Tag manager installation</div><div class="sc">Clean, containerised, firing correctly. Properly done.</div></div><div class="badge gB">B+</div></div>
       <div class="row"><div><div class="rname">Conversion Linker</div><div class="sc">Enabled, with URL passthrough. Most accounts miss this.</div></div><div class="badge gA">A&minus;</div></div>
@@ -301,7 +305,7 @@ Gap   <span class="ok">2 projects &mdash; a 50% increase in revenue, from a hand
   <section>
     <div class="h">Projected Grade After Build</div>
     <div class="arrow">
-      <div class="gradecard gc-C" style="flex:1"><div class="bigletter bl-C">C</div><div class="score100">61 / 100 today</div></div>
+      <div class="gradecard gc-C" style="flex:1"><div class="bigletter bl-C">C</div><div class="score100">68 / 100 today</div></div>
       <div class="ar">&rarr;</div>
       <div class="gradecard gc-B" style="flex:1"><div class="bigletter" style="color:#3fb950;text-shadow:0 0 40px rgba(63,185,80,.45)">A</div><div class="score100">92 / 100 projected</div></div>
     </div>
@@ -309,8 +313,8 @@ Gap   <span class="ok">2 projects &mdash; a 50% increase in revenue, from a hand
     <div class="gscale">
       <div class="gtitle">Where the advertising sits today, and where the twelve rows above put it</div>
       <div class="gtrack">
-        <div class="gmark now" style="left:61%"><div class="gm-lab">You today</div><div class="gm-val">C &middot; 61</div></div>
-        <div class="gdot now" style="left:61%"></div>
+        <div class="gmark now" style="left:68%"><div class="gm-lab">You today</div><div class="gm-val">C+ &middot; 68</div></div>
+        <div class="gdot now" style="left:68%"></div>
         <div class="gdot proj" style="left:92%"></div>
         <div class="gmark proj" style="left:92%"><div class="gm-val">A &middot; 92</div><div class="gm-lab">After the build</div></div>
       </div>
@@ -327,7 +331,7 @@ Gap   <span class="ok">2 projects &mdash; a 50% increase in revenue, from a hand
     <ul class="road">
       <li><b>Test your own contact form</b> and watch whether the URL changes to a thank-you page</li>
       <li><b>Switch enhanced conversions on</b> &mdash; one checkbox, free, no site change</li>
-      <li><b>Add GA4 through the tag manager that is already installed</b> &mdash; invisible to visitors and to Google's rankings</li>
+      <li><b>Confirm GA4 (G-JY81LTQ9T0) is linked to the ads account</b> &mdash; that link is how quality signals travel</li>
       <li><b>Stop reporting every lead as $100</b> and give the different enquiry types different values</li>
     </ul>
     <div class="h" style="margin-top:24px">Build Next</div>
@@ -354,7 +358,11 @@ Gap   <span class="ok">2 projects &mdash; a 50% increase in revenue, from a hand
   served Google Tag Manager container GTM-PGDXJN2W. The conversion value of $100, the Google Ads
   account AW-17972349451, the Conversion Linker and URL passthrough settings, the call conversion tag
   configured against (903) 480-0158, the disabled enhanced-conversions setting and the /thank-you page
-  trigger were all read directly from that container's live published configuration. <b>The /thank-you
+  trigger were all read directly from that container's live published configuration. <b>Google
+  Analytics 4 property G-JY81LTQ9T0 was confirmed present, loaded through Google tag GT-M34XRWXK
+  on your site; an earlier draft of this document stated no analytics was installed and that was
+  wrong. Whether that GA4 property is linked to the ads account is configured inside the accounts
+  and cannot be determined from outside, so no claim is made either way.</b> <b>The /thank-you
   finding is that the page did not respond to our request and does not appear in your sitemap &mdash;
   it behaved identically to a URL we invented as a control. This is a flag to verify, not a confirmed
   fault: a thank-you page can legitimately be excluded from a sitemap, and a server can refuse an
