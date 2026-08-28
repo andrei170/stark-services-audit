@@ -1,0 +1,370 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stark Services & Development — Advertising Audit</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--ink:#e6edf3;--mut:#9aa7b4;--line:#2a3340;--accent:#2f81f7;
+  --good:#3fb950;--bad:#f85149;--gradF:#f85149;--gradD:#e8702a;--gradC:#d29922;--gradB:#3fb950;--gradA:#2ea043;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--mut);font-weight:600}
+header{padding:46px 0 28px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 400px at 70% -10%,rgba(47,129,247,.18),transparent)}
+h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:15px}
+.hero{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:center;margin:34px 0 8px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.gradecard{border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center;position:relative;overflow:hidden}
+.gc-F{background:linear-gradient(160deg,#2a1410,#1c2330)}.gc-D{background:linear-gradient(160deg,#2a1c10,#1c2330)}
+.gc-C{background:linear-gradient(160deg,#2a2410,#1c2330)}.gc-B{background:linear-gradient(160deg,#102a1a,#1c2330)}
+.bigletter{font-size:96px;font-weight:900;line-height:1;position:relative}
+.bl-F{color:var(--gradF);text-shadow:0 0 40px rgba(248,81,73,.45)}
+.bl-D{color:var(--gradD);text-shadow:0 0 40px rgba(232,112,42,.45)}
+.bl-C{color:var(--gradC);text-shadow:0 0 40px rgba(210,153,34,.45)}
+.score100{font-size:18px;color:var(--mut);margin-top:6px;position:relative}
+.heroread h2{font-size:21px;font-weight:800;margin-bottom:10px}
+.heroread p{color:var(--mut);font-size:15.5px}
+.heroread .tag{display:inline-block;margin-top:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink);background:var(--panel)}
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+.h{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.rname{font-weight:600;font-size:15px}
+.bar{height:7px;background:#0b0f15;border-radius:99px;margin-top:9px;overflow:hidden}
+.fill{height:100%;border-radius:99px}
+.badge{font-weight:800;font-size:15px;min-width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#0d1117}
+.gF{background:var(--gradF)}.gD{background:var(--gradD)}.gC{background:var(--gradC)}.gB{background:var(--gradB);color:#06210f}.gA{background:var(--gradA);color:#06210f}
+.sc{font-size:12px;color:var(--mut);margin-top:3px}
+.flag{background:linear-gradient(160deg,#2a1410,#161b22);border:1px solid #6f2a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.flag .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--bad);font-weight:700;margin-bottom:8px}
+.win{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.win .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--good);font-weight:700;margin-bottom:8px}
+.warn{background:linear-gradient(160deg,#2a2410,#161b22);border:1px solid #6f5a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.warn .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--gradC);font-weight:700;margin-bottom:8px}
+.flag p,.win p,.warn p{color:var(--mut);font-size:14.5px;margin-bottom:9px}
+.flag p:last-child,.win p:last-child,.warn p:last-child{margin-bottom:0}
+.flag b,.win b,.warn b{color:var(--ink)}
+.flag ul,.win ul,.warn ul{margin:0 0 9px 20px;color:var(--mut);font-size:14.5px}
+.flag li,.win li,.warn li{margin-bottom:6px}
+.code{background:#0b0f15;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.85;color:var(--mut);overflow-x:auto}
+.code .ph{color:#ff9d94;font-weight:700}.code .ok{color:#84e0a8;font-weight:700}.code .c{color:#5b6672}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cmp th{text-align:left;padding:11px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line);font-weight:700}
+.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--mut);vertical-align:top}
+.cmp tr:last-child td{border-bottom:none}.cmp td b{color:var(--ink)}.cmp tr.you td{background:#241a12}
+.cmp .yes{color:var(--good);font-weight:700}.cmp .no{color:var(--bad);font-weight:700}
+.opp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.opp{grid-template-columns:1fr}}
+.ocard{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px;text-align:center}
+.ocard .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}
+.ocard .big{font-size:30px;font-weight:900;color:var(--good);margin:8px 0 2px}
+.ocard .small{font-size:13px;color:var(--mut)}
+.oppnote{color:var(--mut);font-size:14px;margin-top:14px}.oppnote b{color:var(--ink)}
+.arrow{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 2px;flex-wrap:wrap}
+.pill{font-size:60px;font-weight:900;line-height:1}
+.pill.from-F{color:var(--gradF)}.pill.from-D{color:var(--gradD)}.pill.from-C{color:var(--gradC)}
+.pill.to{color:var(--gradA)}
+.pilllab{font-size:12px;color:var(--mut);text-align:center;text-transform:uppercase;letter-spacing:.1em}
+.ar{font-size:34px;color:var(--mut)}
+ul.road{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){ul.road{grid-template-columns:1fr}}
+ul.road li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;font-size:14.5px}
+.road2 li{border-left-color:var(--good)}
+.cta{text-align:center;padding:40px 0 56px}
+.cta h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.cta p{color:var(--mut);font-size:15px}
+footer{color:var(--mut);font-size:12.5px;text-align:center;padding:22px 0 40px;line-height:1.7}
+.gscale{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 26px 20px;margin-top:16px}
+.gscale .gtitle{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);font-weight:700;margin-bottom:26px;text-align:center}
+.gtrack{position:relative;height:14px;border-radius:8px;background:linear-gradient(90deg,#f85149 0%,#f85149 18%,#e3833c 34%,#d4a72c 52%,#7ec46a 74%,#3fb950 100%);margin:0 4px}
+.gmark{position:absolute;top:-46px;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.gmark .gm-lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:700}
+.gmark .gm-val{font-size:19px;font-weight:900;line-height:1.15}
+.gmark:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:22px;transform:translateX(-50%);background:currentColor;opacity:.75}
+.gmark.now{color:var(--bad)}.gmark.now .gm-val{color:var(--bad)}
+.gmark.proj{color:var(--good)}.gmark.proj .gm-val{color:var(--good)}
+.gmark.proj{top:auto;bottom:-52px}
+.gmark.proj:after{top:auto;bottom:100%}
+.gdot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #0d1117}
+.gdot.now{background:var(--bad)}.gdot.proj{background:var(--good)}
+.gticks{display:flex;justify-content:space-between;margin:66px 4px 0;font-size:11px;letter-spacing:.08em;color:var(--mut);font-weight:700}
+@media(max-width:620px){.gmark .gm-lab{font-size:9px}.gmark .gm-val{font-size:16px}}
+</style></head><body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Advertising Audit &mdash; website and SEO deliberately excluded</div>
+    <h1>Stark Services and Development &mdash; Palestine, Texas</h1>
+    <div class="sub">Prepared for Josh Hildebrandt &middot; 28 August 2026 &middot; AG1 Consulting</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="gradecard gc-C">
+      <div class="bigletter bl-C">C</div>
+      <div class="score100">61 / 100</div>
+    </div>
+    <div class="heroread">
+      <h2>Your tracking tells Google that every enquiry you get is worth exactly $100.</h2>
+      <p>You told our team you are happy with your website and your SEO and you do not want them
+      touched. <b>Understood &mdash; neither is graded anywhere in this document.</b> Every one of the
+      twelve rows below is about the advertising. And the advertising has one problem at the centre of
+      it: <b>your conversion value is hard-coded to $100 for a business that runs month-long
+      projects.</b></p>
+      <span class="tag">Palestine, TX &middot; 4 jobs a month &rarr; 6 &middot; month-long projects &middot; ads only</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="h">First &mdash; What We Actually Found, And It Is Better Than Most</div>
+    <div class="win">
+      <div class="lab">Somebody has done real work here and it should be said plainly</div>
+      <ul>
+        <li><b>Google Tag Manager is properly installed</b> (container GTM-PGDXJN2W) and firing on the site.</li>
+        <li><b>A Google Ads account is connected through it</b> &mdash; AW-17972349451, wired as a
+        base tag rather than bodged into the theme.</li>
+        <li><b>Conversion Linker is switched on.</b> This is the tag that stops Google losing track of
+        a click between the ad and the enquiry. Most accounts we look at have it missing, and it
+        quietly costs them conversions.</li>
+        <li><b>Call conversion tracking is configured</b> against your real number, (903) 480-0158.
+        For a business where the phone is how work actually starts, that is the right call and most
+        contractors do not have it.</li>
+        <li><b>URL passthrough is enabled</b>, which protects tracking when cookies are restricted.</li>
+      </ul>
+      <p><b>This is not a broken account.</b> It is a competently built one that is measuring the wrong
+      thing &mdash; which for a business your shape is the more expensive of the two problems.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Finding 1 &mdash; Every Lead Reports As $100. All Of Them. Identical.</div>
+    <div class="flag">
+      <div class="lab">Read directly from your live Google Tag Manager container</div>
+      <div class="code">Tag       <span class="ok">Google Ads Conversion (__awct)</span>
+Account   AW-17972349451
+Value     <span class="ph">"100"</span>
+Currency  USD
+Meaning   <span class="ph">every single conversion is reported as worth $100</span></div>
+      <p><b>Here is why that matters more for you than for almost anyone else.</b> Google's bidding
+      does what you tell it to do. If every conversion is worth $100, then a tyre-kicker asking about
+      a driveway and a landowner planning a month-long site development are, as far as Google is
+      concerned, <b>exactly the same event.</b></p>
+      <p>So it optimises for <b>the cheapest possible conversions</b> &mdash; because if they are all
+      worth $100, the cheap ones are obviously better value. <b>It will systematically find you more
+      small enquiries and fewer big ones</b>, and it will look like it is doing a good job while it
+      does it, because the cost-per-conversion number will be falling.</p>
+      <div class="code">What you want more of   <span class="ok">month-long development projects</span>
+What this setup rewards <span class="ph">whatever converts cheapest</span></div>
+      <p><b>You told our team you do 4 jobs a month and want 6.</b> That is not a volume problem. Two
+      more projects a month is a handful of extra genuine enquiries, not a flood. <b>The entire game
+      for you is which enquiries arrive, not how many</b> &mdash; and the one number in your container
+      that could tell Google that is currently switched off in the flattest possible way.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Finding 2 &mdash; The Form Conversion Depends On A Page We Could Not Find</div>
+    <div class="flag">
+      <div class="lab">Please verify this one yourself &mdash; we may be wrong, and it is worth two minutes</div>
+      <div class="code">Conversion fires when  <span class="ok">page path starts with /thank-you</span>
+/thank-you            <span class="ph">no response &mdash; same as a URL we invented to test</span>
+In your sitemap       <span class="ph">not listed (7 pages, none of them a thank-you page)</span></div>
+      <p><b>Your web conversion is set to fire on a thank-you page.</b> That is the standard way to do
+      it and it is the right approach. But we could not reach that page &mdash; it behaved exactly the
+      same as a deliberately fake URL we requested as a control, and it does not appear among the seven
+      pages in your sitemap.</p>
+      <p><b>If that page genuinely is not there, or your form does not redirect to it</b> &mdash; if it
+      shows a message on the same page instead &mdash; <b>then no form enquiry has ever registered as a
+      conversion.</b> Only phone calls would be counting. Your account would look worse than it is,
+      and the bidding would be learning from half the picture.</p>
+      <p><b>How to check:</b> fill in your own contact form and watch the address bar. If the URL
+      changes to something with &ldquo;thank-you&rdquo; in it, we are wrong and everything is fine.
+      If it stays on the contact page, this is the most valuable line in this document.</p>
+      <p><b>We are flagging this to verify, not asserting it.</b> A thank-you page can be set to
+      noindex and excluded from a sitemap, and a server can refuse our request for reasons that have
+      nothing to do with whether the page exists.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Finding 3 &mdash; There Is No Analytics At All</div>
+    <div class="flag">
+      <div class="lab">Searched the live page and the full tag manager container</div>
+      <div class="code">Google Ads     <span class="ok">connected (AW-17972349451)</span>
+Google Analytics 4  <span class="ph">not present anywhere</span>
+Meta pixel          <span class="ph">not present</span>
+Microsoft / Bing    <span class="ph">not present</span></div>
+      <p><b>You have the scoreboard without the match.</b> Google Ads will tell you a conversion
+      happened. Nothing on the site can tell you what the person did before it &mdash; which page they
+      landed on, what they read, where the ones who did not enquire dropped out, or whether the traffic
+      is even coming from where you think.</p>
+      <p><b>This matters specifically because of the boundary you set.</b> You do not want the website
+      or the SEO touched, and that is fine &mdash; but it means the only lever we have is the
+      advertising, and right now there is no data to steer it with beyond a conversion count. <b>GA4 is
+      free, sits inside the tag manager that is already there, and changes nothing about how your site
+      looks or ranks.</b></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Finding 4 &mdash; Enhanced Conversions Are Switched Off</div>
+    <div class="warn">
+      <div class="lab">One checkbox, free, in the tag that is already installed</div>
+      <div class="code">Enhanced conversions  <span class="ph">disabled</span>
+Cost to enable        <span class="ok">nothing</span>
+Change to your site   <span class="ok">none</span></div>
+      <p>Enhanced conversions let Google match up enquiries it would otherwise lose &mdash; the ones
+      where the browser blocked the cookie, or the person clicked on their phone and enquired on their
+      laptop later. <b>Without it a share of your real conversions simply never get counted</b>, which
+      makes the account look more expensive than it is and gives the bidding less to learn from.</p>
+      <p><b>This is the easiest fix in this document.</b> It touches nothing you asked us not to touch.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Finding 5 &mdash; One Conversion Action Cannot Tell Your Jobs Apart</div>
+    <div class="warn">
+      <div class="lab">Eight services, one conversion, no way to separate them</div>
+      <div class="code">Services you list  <span class="ok">8</span>
+Conversion actions <span class="ph">1 web + 1 call</span>
+Result             <span class="ph">underbrush mulching and a custom home are the same event</span></div>
+      <p>Your own services page lists concrete, custom homes and barndominiums, dirt work and pads,
+      fencing and driveways, land clearing and ponds, metal buildings and shops, roofing, and
+      underbrush mulching. <b>Those are wildly different jobs at wildly different values</b>, and every
+      one of them currently reports as the same $100 event.</p>
+      <p>Your own services page makes the point better than we can: <i>&ldquo;clearing land leads to
+      grading. Grading leads to a pad. A pad leads to concrete. Concrete leads to a shop, a
+      barndominium, or a home build.&rdquo;</i> <b>That is a ladder</b> &mdash; and the advertising
+      currently cannot tell which rung an enquiry came in on.</p>
+      <p><b>What we would do instead:</b> separate the enquiry types, give each a value that reflects
+      what that job is actually worth to you, and let the bidding chase the top of the ladder rather
+      than the bottom of it. That is a change inside the ad account and the tag manager. <b>Your
+      website and your rankings are not involved.</b></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Finding 6 &mdash; Four To Six Is A Qualification Problem, Not A Traffic Problem</div>
+    <div class="warn">
+      <div class="lab">Your stated goal, and what it actually implies</div>
+      <div class="code">Now   4 jobs a month
+Goal  6 jobs a month
+Gap   <span class="ok">2 projects &mdash; a 50% increase in revenue, from a handful of enquiries</span></div>
+      <p><b>This is a much better position than most people we speak to are in.</b> You are not trying
+      to fill a call centre. You need two more of the right conversations a month, from a business that
+      already wins the work when it gets in front of it.</p>
+      <p><b>Which means throwing more traffic at it is the wrong instinct.</b> More volume on a $100
+      flat conversion value gets you more of what is already cheapest &mdash; smaller jobs, more
+      quoting, more of your time spent on work you did not want. <b>The lever is qualification: fewer
+      enquiries, better ones, and a bidding system that has been told which is which.</b></p>
+      <p><b>The honest caveat:</b> we have not seen inside your ad account. We do not know your spend,
+      your current cost per enquiry, how many of those enquiries turn into projects, or what an average
+      project is worth to you. <b>Everything above is read from your tracking setup, not from your
+      results.</b> Bring those four numbers to the call and we can be far more specific.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">The Scorecard &mdash; Advertising Only</div>
+    <div class="grid">
+      <div class="row"><div><div class="rname">Conversion value</div><div class="sc">Hard-coded to $100 for every enquiry, on a business running month-long projects.</div></div><div class="badge gF">F</div></div>
+      <div class="row"><div><div class="rname">Analytics</div><div class="sc">No GA4 anywhere on the site or in the container.</div></div><div class="badge gF">F</div></div>
+      <div class="row"><div><div class="rname">Conversion segmentation</div><div class="sc">Eight services, one conversion action. Nothing can be told apart.</div></div><div class="badge gF">F</div></div>
+      <div class="row"><div><div class="rname">Form conversion reliability</div><div class="sc">Depends on a /thank-you page we could not reach. Needs verifying.</div></div><div class="badge gD">D&minus;</div></div>
+      <div class="row"><div><div class="rname">Enhanced conversions</div><div class="sc">Disabled. Free to enable, and it changes nothing on the site.</div></div><div class="badge gD">D</div></div>
+      <div class="row"><div><div class="rname">Value-based bidding readiness</div><div class="sc">Not possible while every conversion carries the same number.</div></div><div class="badge gD">D</div></div>
+      <div class="row"><div><div class="rname">Remarketing / audiences</div><div class="sc">No analytics and no pixel means no audience to build from.</div></div><div class="badge gD">D</div></div>
+      <div class="row"><div><div class="rname">Cross-platform coverage</div><div class="sc">Google only. No Meta or Microsoft, which may well be correct for you.</div></div><div class="badge gC">C</div></div>
+      <div class="row"><div><div class="rname">Tag manager installation</div><div class="sc">Clean, containerised, firing correctly. Properly done.</div></div><div class="badge gB">B+</div></div>
+      <div class="row"><div><div class="rname">Conversion Linker</div><div class="sc">Enabled, with URL passthrough. Most accounts miss this.</div></div><div class="badge gA">A&minus;</div></div>
+      <div class="row"><div><div class="rname">Call conversion tracking</div><div class="sc">Configured against your real number. Right instinct for a phone-led trade.</div></div><div class="badge gA">A&minus;</div></div>
+      <div class="row"><div><div class="rname">Account structure hygiene</div><div class="sc">Ads account connected as a base tag rather than pasted into the theme.</div></div><div class="badge gB">B</div></div>
+    </div>
+    <p class="oppnote"><b>Your website and your SEO are not graded here and are not part of this
+    score.</b> You asked for them to be left alone and they have been. The C is a grade for the
+    advertising setup only.</p>
+  </section>
+
+  <section>
+    <div class="h">The Opportunity, On Your Own Figures</div>
+    <div class="opp">
+      <div class="ocard"><div class="lab">You now</div><div class="big">4</div><div class="small">jobs a month</div></div>
+      <div class="ocard"><div class="lab">Your stated goal</div><div class="big">6</div><div class="small">jobs a month</div></div>
+      <div class="ocard"><div class="lab">Value Google is told each lead has</div><div class="big">$100</div><div class="small">every one, identically</div></div>
+    </div>
+    <p class="oppnote"><b>No revenue figure appears in this document.</b> You have not told us your
+    average project value, your ad spend, or your close rate, and we are not going to invent any of
+    them. <b>The third card is the whole argument</b>: the gap between what a project is worth to you
+    and what your tracking says it is worth is the reason the advertising cannot aim at the work you
+    actually want.</p>
+  </section>
+
+  <section>
+    <div class="h">Projected Grade After Build</div>
+    <div class="arrow">
+      <div class="gradecard gc-C" style="flex:1"><div class="bigletter bl-C">C</div><div class="score100">61 / 100 today</div></div>
+      <div class="ar">&rarr;</div>
+      <div class="gradecard gc-B" style="flex:1"><div class="bigletter" style="color:#3fb950;text-shadow:0 0 40px rgba(63,185,80,.45)">A</div><div class="score100">92 / 100 projected</div></div>
+    </div>
+
+    <div class="gscale">
+      <div class="gtitle">Where the advertising sits today, and where the twelve rows above put it</div>
+      <div class="gtrack">
+        <div class="gmark now" style="left:61%"><div class="gm-lab">You today</div><div class="gm-val">C &middot; 61</div></div>
+        <div class="gdot now" style="left:61%"></div>
+        <div class="gdot proj" style="left:92%"></div>
+        <div class="gmark proj" style="left:92%"><div class="gm-val">A &middot; 92</div><div class="gm-lab">After the build</div></div>
+      </div>
+      <div class="gticks"><span>F</span><span>D</span><span>C</span><span>B</span><span>A</span><span>A+</span></div>
+    </div>
+
+    <p class="oppnote">Projected, not promised. It reflects the twelve advertising rows above being
+    fixed, which is within your control and ours. <b>It is not a projection of leads, jobs, ad
+    performance or revenue, and no ranking or traffic outcome is implied.</b></p>
+  </section>
+
+  <section>
+    <div class="h">Fix First &mdash; None Of This Touches Your Website Or Your SEO</div>
+    <ul class="road">
+      <li><b>Test your own contact form</b> and watch whether the URL changes to a thank-you page</li>
+      <li><b>Switch enhanced conversions on</b> &mdash; one checkbox, free, no site change</li>
+      <li><b>Add GA4 through the tag manager that is already installed</b> &mdash; invisible to visitors and to Google's rankings</li>
+      <li><b>Stop reporting every lead as $100</b> and give the different enquiry types different values</li>
+    </ul>
+    <div class="h" style="margin-top:24px">Build Next</div>
+    <ul class="road road2">
+      <li><b>Separate conversion actions per service</b>, so a mulching enquiry and a barndominium enquiry stop looking identical</li>
+      <li><b>A qualifying step on the enquiry</b> &mdash; acreage, timeline and scope &mdash; so the bidding learns from the right ones</li>
+      <li><b>A dedicated campaign landing page</b> that ads point to, leaving your existing website exactly as it is</li>
+      <li><b>Then move to value-based bidding</b>, once there are real values flowing in to bid on</li>
+    </ul>
+  </section>
+
+  <div class="cta">
+    <h2>You do not need more leads. You need Google to stop being told they are all the same.</h2>
+    <p>Everything in this document sits inside the ad account and the tag manager. Your website stays
+    as it is, your rankings stay as they are, and nobody touches either one.</p>
+  </div>
+</div>
+
+<footer>
+  Prepared by Andrei Givero &middot; AG1 Consulting &middot; 28 August 2026<br>
+  For Josh Hildebrandt of Stark Services and Development, Palestine, Texas. <b>This audit deliberately
+  does not assess, grade or comment on the quality of the website or the SEO, at your request.</b> All
+  findings were read on 28 August 2026 from starkservicesanddevelopment.com and from the publicly
+  served Google Tag Manager container GTM-PGDXJN2W. The conversion value of $100, the Google Ads
+  account AW-17972349451, the Conversion Linker and URL passthrough settings, the call conversion tag
+  configured against (903) 480-0158, the disabled enhanced-conversions setting and the /thank-you page
+  trigger were all read directly from that container's live published configuration. <b>The /thank-you
+  finding is that the page did not respond to our request and does not appear in your sitemap &mdash;
+  it behaved identically to a URL we invented as a control. This is a flag to verify, not a confirmed
+  fault: a thank-you page can legitimately be excluded from a sitemap, and a server can refuse an
+  automated request for reasons unrelated to whether the page exists. Please test it yourself before
+  drawing any conclusion.</b> <b>We have not seen inside your Google Ads account and make no claim
+  about your spend, campaign structure, keywords, cost per conversion, close rate or results &mdash;
+  none of that is visible from outside.</b> Your job volumes and your growth goal are <b>as you stated
+  them to our team</b> and have not been independently verified. Services and service areas are taken
+  from your own published pages. Grades are our own assessment against a consistent framework and are
+  not an industry-standard measure. <b>No number of leads, enquiries, jobs, calls or revenue is
+  promised or forecast anywhere in this document.</b>
+</footer>
+</body></html>
