@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stark Services — The Ads Plan</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--ink:#e6edf3;--mut:#9aa7b4;--line:#2a3340;--accent:#2f81f7;
+  --good:#3fb950;--bad:#f85149;--gradF:#f85149;--gradD:#e8702a;--gradC:#d29922;--gradB:#3fb950;--gradA:#2ea043;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--mut);font-weight:600}
+header{padding:46px 0 28px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 400px at 70% -10%,rgba(47,129,247,.18),transparent)}
+h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:15px}
+.hero{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:center;margin:34px 0 8px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.gradecard{border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center;position:relative;overflow:hidden}
+.gc-F{background:linear-gradient(160deg,#2a1410,#1c2330)}.gc-D{background:linear-gradient(160deg,#2a1c10,#1c2330)}
+.gc-C{background:linear-gradient(160deg,#2a2410,#1c2330)}.gc-B{background:linear-gradient(160deg,#102a1a,#1c2330)}
+.bigletter{font-size:96px;font-weight:900;line-height:1;position:relative}
+.bl-F{color:var(--gradF);text-shadow:0 0 40px rgba(248,81,73,.45)}
+.bl-D{color:var(--gradD);text-shadow:0 0 40px rgba(232,112,42,.45)}
+.bl-C{color:var(--gradC);text-shadow:0 0 40px rgba(210,153,34,.45)}
+.score100{font-size:18px;color:var(--mut);margin-top:6px;position:relative}
+.heroread h2{font-size:21px;font-weight:800;margin-bottom:10px}
+.heroread p{color:var(--mut);font-size:15.5px}
+.heroread .tag{display:inline-block;margin-top:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink);background:var(--panel)}
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+.h{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.rname{font-weight:600;font-size:15px}
+.bar{height:7px;background:#0b0f15;border-radius:99px;margin-top:9px;overflow:hidden}
+.fill{height:100%;border-radius:99px}
+.badge{font-weight:800;font-size:15px;min-width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#0d1117}
+.gF{background:var(--gradF)}.gD{background:var(--gradD)}.gC{background:var(--gradC)}.gB{background:var(--gradB);color:#06210f}.gA{background:var(--gradA);color:#06210f}
+.sc{font-size:12px;color:var(--mut);margin-top:3px}
+.flag{background:linear-gradient(160deg,#2a1410,#161b22);border:1px solid #6f2a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.flag .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--bad);font-weight:700;margin-bottom:8px}
+.win{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.win .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--good);font-weight:700;margin-bottom:8px}
+.warn{background:linear-gradient(160deg,#2a2410,#161b22);border:1px solid #6f5a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.warn .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--gradC);font-weight:700;margin-bottom:8px}
+.flag p,.win p,.warn p{color:var(--mut);font-size:14.5px;margin-bottom:9px}
+.flag p:last-child,.win p:last-child,.warn p:last-child{margin-bottom:0}
+.flag b,.win b,.warn b{color:var(--ink)}
+.flag ul,.win ul,.warn ul{margin:0 0 9px 20px;color:var(--mut);font-size:14.5px}
+.flag li,.win li,.warn li{margin-bottom:6px}
+.code{background:#0b0f15;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.85;color:var(--mut);overflow-x:auto}
+.code .ph{color:#ff9d94;font-weight:700}.code .ok{color:#84e0a8;font-weight:700}.code .c{color:#5b6672}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cmp th{text-align:left;padding:11px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line);font-weight:700}
+.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--mut);vertical-align:top}
+.cmp tr:last-child td{border-bottom:none}.cmp td b{color:var(--ink)}.cmp tr.you td{background:#241a12}
+.cmp .yes{color:var(--good);font-weight:700}.cmp .no{color:var(--bad);font-weight:700}
+.opp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.opp{grid-template-columns:1fr}}
+.ocard{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px;text-align:center}
+.ocard .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}
+.ocard .big{font-size:30px;font-weight:900;color:var(--good);margin:8px 0 2px}
+.ocard .small{font-size:13px;color:var(--mut)}
+.oppnote{color:var(--mut);font-size:14px;margin-top:14px}.oppnote b{color:var(--ink)}
+.arrow{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 2px;flex-wrap:wrap}
+.pill{font-size:60px;font-weight:900;line-height:1}
+.pill.from-F{color:var(--gradF)}.pill.from-D{color:var(--gradD)}.pill.from-C{color:var(--gradC)}
+.pill.to{color:var(--gradA)}
+.pilllab{font-size:12px;color:var(--mut);text-align:center;text-transform:uppercase;letter-spacing:.1em}
+.ar{font-size:34px;color:var(--mut)}
+ul.road{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){ul.road{grid-template-columns:1fr}}
+ul.road li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;font-size:14.5px}
+.road2 li{border-left-color:var(--good)}
+.cta{text-align:center;padding:40px 0 56px}
+.cta h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.cta p{color:var(--mut);font-size:15px}
+footer{color:var(--mut);font-size:12.5px;text-align:center;padding:22px 0 40px;line-height:1.7}
+.gscale{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 26px 20px;margin-top:16px}
+.gscale .gtitle{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);font-weight:700;margin-bottom:26px;text-align:center}
+.gtrack{position:relative;height:14px;border-radius:8px;background:linear-gradient(90deg,#f85149 0%,#f85149 18%,#e3833c 34%,#d4a72c 52%,#7ec46a 74%,#3fb950 100%);margin:0 4px}
+.gmark{position:absolute;top:-46px;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.gmark .gm-lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:700}
+.gmark .gm-val{font-size:19px;font-weight:900;line-height:1.15}
+.gmark:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:22px;transform:translateX(-50%);background:currentColor;opacity:.75}
+.gmark.now{color:var(--bad)}.gmark.now .gm-val{color:var(--bad)}
+.gmark.proj{color:var(--good)}.gmark.proj .gm-val{color:var(--good)}
+.gmark.proj{top:auto;bottom:-52px}
+.gmark.proj:after{top:auto;bottom:100%}
+.gdot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #0d1117}
+.gdot.now{background:var(--bad)}.gdot.proj{background:var(--good)}
+.gticks{display:flex;justify-content:space-between;margin:66px 4px 0;font-size:11px;letter-spacing:.08em;color:var(--mut);font-weight:700}
+@media(max-width:620px){.gmark .gm-lab{font-size:9px}.gmark .gm-val{font-size:16px}}
+</style></head><body>
+<style>
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+@media(max-width:840px){.pgrid{grid-template-columns:1fr}}
+.pk{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:26px;position:relative}
+.pk.main{border-color:#3fb950;box-shadow:0 0 0 1px rgba(63,185,80,.25)}
+.pk .rec{position:absolute;top:-11px;left:26px;background:#3fb950;color:#0d1117;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;padding:4px 11px;border-radius:999px}
+.pk h3{font-size:20px;margin:6px 0 3px;color:#e6edf3}
+.pk .blurb{font-size:13.5px;color:#8b949e;margin-bottom:14px}
+.pk .price{font-size:36px;font-weight:800;color:#e6edf3;line-height:1}
+.pk .price span{font-size:13.5px;font-weight:600;color:#8b949e;display:block;margin-top:6px}
+.pk ul{list-style:none;padding:0;margin:16px 0 0}
+.pk li{font-size:14px;color:#c9d1d9;padding:8px 0 8px 24px;position:relative;border-top:1px solid #21262d}
+.pk li:first-child{border-top:0}
+.pk li:before{content:"";position:absolute;left:0;top:14px;width:12px;height:6px;border-left:2.5px solid #3fb950;border-bottom:2.5px solid #3fb950;transform:rotate(-45deg)}
+.pk li b{color:#e6edf3}
+.bt{width:100%;border-collapse:collapse;font-size:15px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:10px}
+.bt th{text-align:left;padding:12px 15px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line);font-weight:700}
+.bt td{padding:12px 15px;border-bottom:1px solid var(--line);color:var(--mut)}
+.bt tr:last-child td{border-bottom:none}.bt td b{color:var(--ink)}
+.bt .big{font-size:19px;font-weight:800;color:var(--good)}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Proposed Advertising Plan &middot; follow-up to our call of 28 August</div>
+    <h1>Stark Services and Development &mdash; The Ads Plan</h1>
+    <div class="sub">Prepared for Josh &middot; 4 September 2026 &middot; AG1 Consulting</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="h">What We Are Not Touching</div>
+    <div class="win">
+      <div class="lab">Your website and SEO stay exactly where they are</div>
+      <p><b>Quickstrike Media handle your site and your SEO for $1,200 a month, and it is working.</b> We
+      are not proposing to rebuild anything, replace them, or get involved in that lane. <b>There is no
+      website phase in this plan and no build fee.</b></p>
+      <p><b>This is advertising only</b>, running alongside what they already do.</p>
+      <p><b>One small thing we would need from them</b> &mdash; a single extra field on your enquiry form
+      asking the rough job value. That is a ten-minute job for whoever maintains the site, and it is the
+      one input that makes everything below work.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">The Problem, In One Line</div>
+    <div class="flag">
+      <div class="lab">Read from your live Tag Manager container, 4 September 2026</div>
+      <div class="code">Container            <span class="ok">GTM-PGDXJN2W</span>
+Google Ads account   <span class="ok">AW-17972349451</span>
+Conversion tags      <span class="ok">7 firing</span>
+Conversion linkers   <span class="ok">5 present</span>
+Value per conversion <span class="ph">"100" &mdash; every single one</span></div>
+      <p><b>Your tracking is not broken. It is well built.</b> Seven conversion tags, properly linked
+      &mdash; that puts you ahead of almost every contractor we look at.</p>
+      <p><b>The problem is that all seven report the same number.</b> A $600,000 commercial build and an
+      $8,000 repair both arrive at Google as a $100 conversion.</p>
+      <p><b>So Google optimises for neither.</b> It has no way to know which enquiries you actually want,
+      which means it buys whichever clicks are cheapest &mdash; and the cheapest clicks in construction
+      are almost never the big jobs.</p>
+      <p><b>Everything in this plan follows from fixing that one signal.</b></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Two Ways To Run It</div>
+    <div class="pgrid">
+      <div class="pk main">
+        <div class="rec">Recommended</div>
+        <h3>Option 1 &mdash; Volume First</h3>
+        <div class="blurb">Small jobs fund it and train the algorithm. Commercial builds behind them.</div>
+        <div class="price">$4,000<span>per month &middot; $2,000 management, $2,000 ad spend</span></div>
+        <ul>
+          <li><b>Google Local Service Ads</b> weighted to the small work &mdash; pay per lead, fast, cash-flow positive</li>
+          <li><b>A smaller commercial Search campaign</b> running alongside on high-intent terms</li>
+          <li><b>Conversion values rebuilt</b> to report real job value, not a flat $100</li>
+          <li><b>Value-based bidding switched on</b> once there is enough volume for it to learn</li>
+          <li><b>Dedicated landing page</b> per campaign, hosted separately from your main site</li>
+          <li><b>Reported on cost per booked job</b>, split by job size</li>
+          <li><b>Reviewed at 90 days</b> before scaling</li>
+        </ul>
+      </div>
+
+      <div class="pk">
+        <h3>Option 2 &mdash; Straight At The Big Work</h3>
+        <div class="blurb">Commercial-led from day one. Slower to prove, aimed squarely at the $350k&ndash;$600k jobs.</div>
+        <div class="price">$8,000<span>per month &middot; $4,000 management, $4,000 ad spend</span></div>
+        <ul>
+          <li><b>Commercial Search leads the budget</b> &mdash; high-intent terms, wider East Texas radius</li>
+          <li><b>Local Service Ads still running</b>, but as the smaller half</li>
+          <li><b>Separate campaigns per job type</b>, so the two never compete for the same budget</li>
+          <li><b>Conversion values rebuilt</b> and value-based bidding from the start</li>
+          <li><b>Multiple landing pages</b> by project type</li>
+          <li><b>Authority positioning</b> built around your IT and cybersecurity background</li>
+          <li><b>Reviewed at 90 days</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="oppnote"><b>Why Option 1 is the recommendation, and it is not about the money.</b>
+    Value-based bidding needs conversion <b>volume</b> before Google's algorithm can learn anything at
+    all. <b>The small jobs are what teach the system to recognise the big ones.</b> Starting
+    commercial-first means paying for expensive clicks while the account has nothing to learn from.
+    <b>Option 2 works, it just takes longer to get honest data out of.</b></p>
+  </section>
+
+  <section>
+    <div class="h">The Arithmetic, On Your Own Figures</div>
+    <table class="bt">
+      <tr><th>&nbsp;</th><th>Your number</th><th>What it means</th></tr>
+      <tr><td><b>Small job average</b></td><td>$8,000 at ~30% net</td><td><b>$2,400 profit per job</b></td></tr>
+      <tr><td><b>Option 1 break-even</b></td><td>$4,000/month</td><td class="big">1.7 small jobs a month</td></tr>
+      <tr><td><b>Option 2 break-even</b></td><td>$8,000/month</td><td class="big">3.3 small jobs a month</td></tr>
+      <tr><td><b>One large job</b></td><td>$350,000 at 30% net</td><td class="big">$105,000 profit</td></tr>
+      <tr><td><b>What one large job covers</b></td><td>&nbsp;</td><td><b>Option 1 for over two years</b></td></tr>
+    </table>
+    <p class="oppnote"><b>This is arithmetic on the figures you gave us, not a forecast.</b> No number of
+    leads, jobs or revenue is promised anywhere in this document, and results depend on your market,
+    your pricing and your own sales process. <b>What the numbers do show is the shape of the risk:</b>
+    under two small jobs a month covers Option 1 entirely, and a single large project would pay for it
+    for years.</p>
+  </section>
+
+  <section>
+    <div class="h">The Meta Alternative &mdash; And An Honest Assessment</div>
+    <div class="warn">
+      <div class="lab">You asked what Meta would look like. Here it is, including where it falls down.</div>
+      <div class="code">Meta package   <span class="ok">$2,500/month &mdash; $1,250 management, $1,250 spend</span></div>
+      <p><b>What Meta is genuinely good at for a business like yours:</b></p>
+      <ul>
+        <li><b>Your "mailbox money" work.</b> Modular home pads and quick residential jobs are impulse-adjacent and visual &mdash; that is exactly what Meta sells well.</li>
+        <li><b>Showing finished work.</b> Construction is one of the most visual trades there is, and before-and-after content performs on Facebook in a way it never will on a search results page.</li>
+        <li><b>Being known in a small market.</b> Palestine and Anderson County are small enough that sustained local presence compounds &mdash; people recognise the name before they need you.</li>
+        <li><b>Your background.</b> An IT and cybersecurity man running a construction company is an unusual story, and Meta is where a story like that can actually be told.</li>
+      </ul>
+      <p><b>And where it will not deliver:</b></p>
+      <p><b>Meta will not bring you $350,000 commercial projects.</b> Nobody scrolling Facebook decides to commission a six-figure build. That work is won on bids, relationships and referrals &mdash; and the honest position is that no advertising platform buys it directly. <b>What advertising does is get you known and get you invited.</b></p>
+      <p><b>So we would not recommend Meta instead of Google. We would recommend it after</b> &mdash;
+      once the Google side is producing and there is budget to build presence alongside it.</p>
+      <p><b>If you wanted to start with Meta anyway</b>, it is the cheaper entry at $2,500 and it would
+      fill the small-job pipeline. It just would not move you toward the thing you actually said you
+      wanted, which is bigger and longer projects.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">One Thing To Revisit</div>
+    <div class="warn">
+      <div class="lab">Remarketing &mdash; your call, but worth a second look</div>
+      <p><b>You have remarketing switched off because you find it annoying personally.</b> That is a
+      completely fair position and we are not going to argue you out of it for consumer-style
+      retargeting.</p>
+      <p><b>But a $350,000 project has a decision cycle measured in months</b>, and during that time the
+      buyer is comparing you against two or three others. <b>Remarketing on the commercial side is not
+      chasing someone round the internet &mdash; it is being visible while a slow decision is being
+      made.</b></p>
+      <p><b>Our suggestion: leave it off for the small-job campaigns entirely, and consider it for
+      commercial only.</b> Different job, different intent.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">What We Would Need From You</div>
+    <ul class="road">
+      <li><b>Access to the Google Ads account</b> (AW-17972349451) and Tag Manager</li>
+      <li><b>One extra field on your enquiry form</b> &mdash; rough job value. Ask Quickstrike; it is a ten-minute change</li>
+      <li><b>Your real job-value bands</b>, so the conversion values reflect what a lead is actually worth to you</li>
+      <li><b>Which counties matter most</b> &mdash; the commercial radius is wider than the small-job one</li>
+      <li><b>Photographs of completed projects</b>, commercial especially</li>
+      <li><b>Whether Quickstrike need looping in</b> on anything that touches the site</li>
+    </ul>
+  </section>
+
+  <div class="cta">
+    <h2>Your tracking is not broken. It is telling Google everything is worth $100.</h2>
+    <p>Fix the value signal, let the small jobs teach the algorithm, then point it at the work you
+    actually want.</p>
+  </div>
+</div>
+
+<footer>
+  Prepared by Andrei Givero &middot; AG1 Consulting &middot; 4 September 2026<br>
+  For Josh at Stark Services and Development, Palestine, Texas. <b>This is a proposal for discussion,
+  not a contract; final scope and payment terms would be confirmed separately in writing, and the prices
+  shown are quotations valid for thirty days.</b> <b>All business figures &mdash; revenue, job values,
+  net margins, employee numbers, job durations and your growth targets &mdash; are as you stated them on
+  our call of 28 August 2026 and have NOT been independently verified by AG1 Consulting.</b> <b>The
+  break-even figures are arithmetic applied to those stated figures. They are not a forecast, a
+  projection or a guarantee, and AG1 Consulting promises no number of leads, enquiries, jobs or revenue
+  from any campaign.</b> <b>The Tag Manager container ID, Google Ads conversion ID and the conversion
+  value observed are publicly visible in your own published page code; we have NOT been inside your
+  Google Ads account and make no claim about your spend, your historical results, or the quality of any
+  work done on the account to date.</b> <b>Nothing in this document is a comment on the competence or
+  conduct of Quickstrike Media, whose work and accounts we have not seen.</b> <b>Statements about how
+  Google's value-based bidding and machine learning behave, about Meta's suitability for different job
+  types, and about how commercial construction work is typically won are general commercial observations
+  based on our own experience, not researched findings about your market.</b> <b>Google Local Service
+  Ads availability, eligibility and verification are controlled by Google.</b> Timescales and campaign
+  structures described are working intentions, not contractual commitments.
+</footer>
+</body></html>
