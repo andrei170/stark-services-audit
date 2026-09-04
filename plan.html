@@ -90,7 +90,8 @@ footer{color:var(--mut);font-size:12.5px;text-align:center;padding:22px 0 40px;l
 @media(max-width:620px){.gmark .gm-lab{font-size:9px}.gmark .gm-val{font-size:16px}}
 </style></head><body>
 <style>
-.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.pgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:24px 0}
+@media(max-width:1100px){.pgrid{grid-template-columns:1fr}}
 @media(max-width:840px){.pgrid{grid-template-columns:1fr}}
 .pk{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:26px;position:relative}
 .pk.main{border-color:#3fb950;box-shadow:0 0 0 1px rgba(63,185,80,.25)}
@@ -163,8 +164,7 @@ Value per conversion <span class="ph">"100" &mdash; every single one</span></div
   <section>
     <div class="h">Two Ways To Run It</div>
     <div class="pgrid">
-      <div class="pk main">
-        <div class="rec">Recommended</div>
+      <div class="pk">
         <h3>Option 1 &mdash; Volume First</h3>
         <div class="blurb">Small jobs fund it and train the algorithm. Commercial builds behind them.</div>
         <div class="split">
@@ -181,6 +181,27 @@ Value per conversion <span class="ph">"100" &mdash; every single one</span></div
           <li><b>Dedicated landing page</b> per campaign, hosted separately from your main site</li>
           <li><b>Reported on cost per booked job</b>, split by job size</li>
           <li><b>Reviewed at 90 days</b> before scaling</li>
+        </ul>
+      </div>
+
+      <div class="pk main">
+        <div class="rec">Built for you</div>
+        <h3>The Middle Option</h3>
+        <div class="blurb">What you asked for on the call &mdash; roughly $3k of spend, sized properly rather than split down the middle.</div>
+        <div class="split">
+          <div class="row2"><span>AG1 management fee</span><b>$3,000/mo</b></div>
+          <div class="row2"><span>Your ad spend &mdash; paid to Google</span><b>$3,000/mo</b></div>
+          <div class="row2 tot"><span>Total out of pocket</span><b>$6,000/mo</b></div>
+          <div class="note">Ad spend is a hard cap and goes straight to the platform. It is not AG1 revenue and we take no percentage of it.</div>
+        </div>
+        <ul>
+          <li><b>Both campaigns running properly from month one</b> &mdash; Local Service Ads and commercial Search, each with its own budget</li>
+          <li><b>Conversion values rebuilt</b> so the $100 problem is gone before a dollar is spent</li>
+          <li><b>Value-based bidding</b> switched on as soon as volume allows</li>
+          <li><b>Two landing pages</b> &mdash; one small-job, one commercial</li>
+          <li><b>Seasonal budget shifting</b> built in, so spend moves with your year rather than sitting flat through November</li>
+          <li><b>Reported on cost per booked job</b>, split by job size</li>
+          <li><b>Reviewed at 90 days</b></li>
         </ul>
       </div>
 
@@ -204,7 +225,7 @@ Value per conversion <span class="ph">"100" &mdash; every single one</span></div
         </ul>
       </div>
     </div>
-    <p class="oppnote"><b>Why Option 1 is the recommendation, and it is not about the money.</b>
+    <p class="oppnote"><b>Why the middle option is the one we would run.</b> You said neither of the first two was quite the shape you wanted, and you were right. <b>At $3,000 of spend both campaigns can run properly at the same time</b> &mdash; at $2,000 the commercial side is too thin to learn anything, and at $4,000 you are paying for scale before you know what works.<br><br><b>The strategy underneath it is still volume-first, and that is not about the money.</b>
     Value-based bidding needs conversion <b>volume</b> before Google's algorithm can learn anything at
     all. <b>The small jobs are what teach the system to recognise the big ones.</b> Starting
     commercial-first means paying for expensive clicks while the account has nothing to learn from.
@@ -217,6 +238,7 @@ Value per conversion <span class="ph">"100" &mdash; every single one</span></div
       <tr><th>&nbsp;</th><th>Your number</th><th>What it means</th></tr>
       <tr><td><b>Small job average</b></td><td>$8,000 at ~30% net</td><td><b>$2,400 profit per job</b></td></tr>
       <tr><td><b>Option 1 break-even</b></td><td>$2,000 fee + $2,000 spend</td><td class="big">1.7 small jobs a month</td></tr>
+      <tr><td><b>Middle option break-even</b></td><td>$3,000 fee + $3,000 spend</td><td class="big">2.5 small jobs a month</td></tr>
       <tr><td><b>Option 2 break-even</b></td><td>$4,000 fee + $4,000 spend</td><td class="big">3.3 small jobs a month</td></tr>
       <tr><td><b>One large job</b></td><td>$350,000 at 30% net</td><td class="big">$105,000 profit</td></tr>
       <tr><td><b>What one large job covers</b></td><td>&nbsp;</td><td><b>Option 1 for over two years</b></td></tr>
