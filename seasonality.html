@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stark Services — Seasonality & The Winter Question</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--ink:#e6edf3;--mut:#9aa7b4;--line:#2a3340;--accent:#2f81f7;
+  --good:#3fb950;--bad:#f85149;--gradF:#f85149;--gradD:#e8702a;--gradC:#d29922;--gradB:#3fb950;--gradA:#2ea043;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--mut);font-weight:600}
+header{padding:46px 0 28px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 400px at 70% -10%,rgba(47,129,247,.18),transparent)}
+h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:15px}
+.hero{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:center;margin:34px 0 8px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.gradecard{border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center;position:relative;overflow:hidden}
+.gc-F{background:linear-gradient(160deg,#2a1410,#1c2330)}.gc-D{background:linear-gradient(160deg,#2a1c10,#1c2330)}
+.gc-C{background:linear-gradient(160deg,#2a2410,#1c2330)}.gc-B{background:linear-gradient(160deg,#102a1a,#1c2330)}
+.bigletter{font-size:96px;font-weight:900;line-height:1;position:relative}
+.bl-F{color:var(--gradF);text-shadow:0 0 40px rgba(248,81,73,.45)}
+.bl-D{color:var(--gradD);text-shadow:0 0 40px rgba(232,112,42,.45)}
+.bl-C{color:var(--gradC);text-shadow:0 0 40px rgba(210,153,34,.45)}
+.score100{font-size:18px;color:var(--mut);margin-top:6px;position:relative}
+.heroread h2{font-size:21px;font-weight:800;margin-bottom:10px}
+.heroread p{color:var(--mut);font-size:15.5px}
+.heroread .tag{display:inline-block;margin-top:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink);background:var(--panel)}
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+.h{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.rname{font-weight:600;font-size:15px}
+.bar{height:7px;background:#0b0f15;border-radius:99px;margin-top:9px;overflow:hidden}
+.fill{height:100%;border-radius:99px}
+.badge{font-weight:800;font-size:15px;min-width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#0d1117}
+.gF{background:var(--gradF)}.gD{background:var(--gradD)}.gC{background:var(--gradC)}.gB{background:var(--gradB);color:#06210f}.gA{background:var(--gradA);color:#06210f}
+.sc{font-size:12px;color:var(--mut);margin-top:3px}
+.flag{background:linear-gradient(160deg,#2a1410,#161b22);border:1px solid #6f2a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.flag .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--bad);font-weight:700;margin-bottom:8px}
+.win{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.win .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--good);font-weight:700;margin-bottom:8px}
+.warn{background:linear-gradient(160deg,#2a2410,#161b22);border:1px solid #6f5a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.warn .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--gradC);font-weight:700;margin-bottom:8px}
+.flag p,.win p,.warn p{color:var(--mut);font-size:14.5px;margin-bottom:9px}
+.flag p:last-child,.win p:last-child,.warn p:last-child{margin-bottom:0}
+.flag b,.win b,.warn b{color:var(--ink)}
+.flag ul,.win ul,.warn ul{margin:0 0 9px 20px;color:var(--mut);font-size:14.5px}
+.flag li,.win li,.warn li{margin-bottom:6px}
+.code{background:#0b0f15;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.85;color:var(--mut);overflow-x:auto}
+.code .ph{color:#ff9d94;font-weight:700}.code .ok{color:#84e0a8;font-weight:700}.code .c{color:#5b6672}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cmp th{text-align:left;padding:11px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line);font-weight:700}
+.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--mut);vertical-align:top}
+.cmp tr:last-child td{border-bottom:none}.cmp td b{color:var(--ink)}.cmp tr.you td{background:#241a12}
+.cmp .yes{color:var(--good);font-weight:700}.cmp .no{color:var(--bad);font-weight:700}
+.opp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.opp{grid-template-columns:1fr}}
+.ocard{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px;text-align:center}
+.ocard .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}
+.ocard .big{font-size:30px;font-weight:900;color:var(--good);margin:8px 0 2px}
+.ocard .small{font-size:13px;color:var(--mut)}
+.oppnote{color:var(--mut);font-size:14px;margin-top:14px}.oppnote b{color:var(--ink)}
+.arrow{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 2px;flex-wrap:wrap}
+.pill{font-size:60px;font-weight:900;line-height:1}
+.pill.from-F{color:var(--gradF)}.pill.from-D{color:var(--gradD)}.pill.from-C{color:var(--gradC)}
+.pill.to{color:var(--gradA)}
+.pilllab{font-size:12px;color:var(--mut);text-align:center;text-transform:uppercase;letter-spacing:.1em}
+.ar{font-size:34px;color:var(--mut)}
+ul.road{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){ul.road{grid-template-columns:1fr}}
+ul.road li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;font-size:14.5px}
+.road2 li{border-left-color:var(--good)}
+.cta{text-align:center;padding:40px 0 56px}
+.cta h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.cta p{color:var(--mut);font-size:15px}
+footer{color:var(--mut);font-size:12.5px;text-align:center;padding:22px 0 40px;line-height:1.7}
+.gscale{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 26px 20px;margin-top:16px}
+.gscale .gtitle{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);font-weight:700;margin-bottom:26px;text-align:center}
+.gtrack{position:relative;height:14px;border-radius:8px;background:linear-gradient(90deg,#f85149 0%,#f85149 18%,#e3833c 34%,#d4a72c 52%,#7ec46a 74%,#3fb950 100%);margin:0 4px}
+.gmark{position:absolute;top:-46px;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.gmark .gm-lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:700}
+.gmark .gm-val{font-size:19px;font-weight:900;line-height:1.15}
+.gmark:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:22px;transform:translateX(-50%);background:currentColor;opacity:.75}
+.gmark.now{color:var(--bad)}.gmark.now .gm-val{color:var(--bad)}
+.gmark.proj{color:var(--good)}.gmark.proj .gm-val{color:var(--good)}
+.gmark.proj{top:auto;bottom:-52px}
+.gmark.proj:after{top:auto;bottom:100%}
+.gdot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #0d1117}
+.gdot.now{background:var(--bad)}.gdot.proj{background:var(--good)}
+.gticks{display:flex;justify-content:space-between;margin:66px 4px 0;font-size:11px;letter-spacing:.08em;color:var(--mut);font-weight:700}
+@media(max-width:620px){.gmark .gm-lab{font-size:9px}.gmark .gm-val{font-size:16px}}
+</style></head><body>
+<style>
+.quote{background:var(--panel);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:20px 24px;margin:18px 0;font-size:17px;line-height:1.7;color:var(--ink)}
+.quote .who{display:block;margin-top:10px;font-size:13.5px;color:var(--mut);font-weight:600}
+.cal{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:18px 0}
+@media(max-width:820px){.cal{grid-template-columns:repeat(3,1fr)}}
+.mo{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 8px;text-align:center}
+.mo .m{font-weight:800;font-size:15px;color:var(--ink)}
+.mo .s{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;font-weight:700}
+.mo.on{border-color:#1f6f3a;background:linear-gradient(160deg,#0f2417,#161b22)}
+.mo.on .s{color:var(--good)}
+.mo.mid{border-color:#6f5a1f;background:linear-gradient(160deg,#2a2410,#161b22)}
+.mo.mid .s{color:var(--gradC)}
+.mo.off{border-color:#6f2a1f;background:linear-gradient(160deg,#2a1410,#161b22)}
+.mo.off .s{color:var(--bad)}
+.big2{font-size:24px;font-weight:800;color:var(--ink);line-height:1.35;margin:6px 0 12px}
+.opt{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:14px}
+.opt.pick{border-color:#1f6f3a;box-shadow:0 0 0 1px rgba(63,185,80,.25)}
+.opt h3{font-size:19px;margin:0 0 4px;color:var(--ink)}
+.opt .tagx{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--mut);margin-bottom:10px}
+.opt.pick .tagx{color:var(--good)}
+.opt p{font-size:15px;color:var(--mut);margin:0 0 9px}.opt p:last-child{margin:0}
+.opt b{color:var(--ink)}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Seasonality &middot; prepared after our call of 4 September</div>
+    <h1>Stark Services &mdash; Should You Advertise Into A Dead Season?</h1>
+    <div class="sub">Prepared for Josh &middot; 5 September 2026 &middot; AG1 Consulting</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="h">Your Words, Not Ours</div>
+    <div class="quote">
+      &ldquo;They don't do dirt work and land clearing in the fall. It's just slow.&rdquo;
+      <br><br>
+      &ldquo;The winter months are always slower. <b>You basically figure you're not going to get
+      anything in November and December. That's just dead months.</b>&rdquo;
+      <span class="who">Josh Hildebrandt &middot; 4 September 2026</span>
+    </div>
+    <p class="oppnote"><b>That is the whole question.</b> You raised it yourself, and you were right to
+    &mdash; it is the single biggest factor in whether starting now is smart or wasteful.</p>
+  </section>
+
+  <section>
+    <div class="h">Your Year, As You Described It</div>
+    <div class="cal">
+      <div class="mo on"><div class="m">Jan</div><div class="s">Planning</div></div>
+      <div class="mo on"><div class="m">Feb</div><div class="s">Planning</div></div>
+      <div class="mo on"><div class="m">Mar</div><div class="s">Building</div></div>
+      <div class="mo on"><div class="m">Apr</div><div class="s">Building</div></div>
+      <div class="mo on"><div class="m">May</div><div class="s">Building</div></div>
+      <div class="mo on"><div class="m">Jun</div><div class="s">Building</div></div>
+      <div class="mo on"><div class="m">Jul</div><div class="s">Building</div></div>
+      <div class="mo mid"><div class="m">Aug</div><div class="s">Drought risk</div></div>
+      <div class="mo mid"><div class="m">Sep</div><div class="s">Slowing</div></div>
+      <div class="mo mid"><div class="m">Oct</div><div class="s">Slow</div></div>
+      <div class="mo off"><div class="m">Nov</div><div class="s">Dead</div></div>
+      <div class="mo off"><div class="m">Dec</div><div class="s">Dead</div></div>
+    </div>
+    <p class="oppnote"><b>Two dead months, three slow ones, and a drought risk in high summer.</b> You
+    also told us it got dry enough this year that you did not want to be out clearing at all &mdash;
+    fire risk. <b>So the weather closes your window from both ends.</b></p>
+  </section>
+
+  <section>
+    <div class="h">The Question Everyone Gets Wrong</div>
+    <div class="win">
+      <div class="lab">Read this bit twice. It is the whole argument.</div>
+      <div class="big2">November and December are dead for <em>doing</em> the work.<br>
+      They are not dead for <em>winning</em> it.</div>
+      <p><b>Nobody clears land in December. But people decide in December what they are clearing in
+      March.</b></p>
+      <p><b>A commercial project that breaks ground in spring was budgeted and bid over the winter.</b>
+      The decision happens months before the machinery moves.</p>
+      <p><b>So the dead months are not dead demand. They are delayed demand.</b> The enquiry still
+      happens; the job just starts later.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">And Here Is The Part That Favours You</div>
+    <div class="win">
+      <div class="lab">What happens to advertising costs when everyone else stops</div>
+      <p><b>Your competitors think the same way you do.</b> Work slows, so they pull back or switch off.</p>
+      <p><b>When advertisers leave an auction, the ones who stay pay less.</b> Fewer bidders on the same
+      searches means a lower cost per click and a lower cost per lead.</p>
+      <p><b>So the months when the work is cheapest to win are the months everyone abandons.</b></p>
+      <p><b>That is a general pattern in seasonal trades, not a promise about your account.</b> We do not
+      yet have your month-by-month numbers &mdash; and we are not going to invent them. <b>What we can
+      say is that this is the shape to expect, and that the first winter is when you find out what your
+      own numbers actually are.</b></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Three Ways To Play It</div>
+
+    <div class="opt">
+      <div class="tagx">Option A</div>
+      <h3>Wait until spring</h3>
+      <p><b>Set everything up now, launch in February.</b> Nothing is spent over the dead months.</p>
+      <p><b>The case for it:</b> no wasted budget, and you start when the phones would ring anyway.</p>
+      <p><b>The case against:</b> you launch into the busiest, most expensive, most contested part of the
+      year with a brand new account that has no data in it. <b>Google's algorithm learns from history,
+      and you would have none.</b> The first six weeks would be the account working out what a good lead
+      looks like &mdash; at peak prices.</p>
+    </div>
+
+    <div class="opt pick">
+      <div class="tagx">Option B &mdash; our recommendation</div>
+      <h3>Start small in the quiet months, scale in spring</h3>
+      <p><b>Run a reduced budget through November and December.</b> Not the full programme &mdash;
+      enough to keep the account learning and collect the winter enquiries that do exist.</p>
+      <p><b>Why this is the sensible one:</b></p>
+      <p><b>1. The account arrives at spring already trained.</b> By March it knows which enquiries
+      convert, and value-based bidding has real data behind it. <b>That is worth more than the budget
+      you saved.</b></p>
+      <p><b>2. You find out your own seasonal numbers</b> instead of guessing at them next year.</p>
+      <p><b>3. Winter clicks are cheaper</b>, so the learning costs less than it would in May.</p>
+      <p><b>4. Spring work gets decided in winter.</b> You are in front of those people while your
+      competitors are not.</p>
+    </div>
+
+    <div class="opt">
+      <div class="tagx">Option C</div>
+      <h3>Full budget straight through</h3>
+      <p><b>Run the whole programme regardless of season.</b></p>
+      <p><b>The case for it:</b> maximum share of whatever winter demand exists, and the strongest
+      possible position by March.</p>
+      <p><b>The case against:</b> <b>we would not recommend it and we would rather say so.</b> Spending
+      full budget into two months you have described as dead is how people conclude advertising does not
+      work. <b>The honest version is that it works, but not evenly across the year.</b></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">What We Would Actually Do, Month By Month</div>
+    <ul class="road">
+      <li><b>Sept&ndash;Oct</b> &mdash; build and launch. Fix conversion values, get the account running while there is still work about</li>
+      <li><b>Nov&ndash;Dec</b> &mdash; reduce spend, keep it live. Shift the message from "we can start now" to "let's plan your spring"</li>
+      <li><b>Jan&ndash;Feb</b> &mdash; step spend back up. This is when spring budgets are set and bids go out</li>
+      <li><b>Mar onward</b> &mdash; full budget into a trained account, at the start of your season rather than the middle</li>
+    </ul>
+    <p class="oppnote"><b>The one thing we would not do is switch off entirely and restart.</b> An
+    account that goes dark loses its learning, and you would pay to rebuild it in the most expensive
+    month of the year.</p>
+  </section>
+
+  <section>
+    <div class="h">What Changes In The Ads Themselves</div>
+    <div class="warn">
+      <div class="lab">Same budget, different message</div>
+      <p><b>In season</b> &mdash; urgency. Availability, how soon you can start, capacity this month.</p>
+      <p><b>Out of season</b> &mdash; planning. Spring bookings, getting a quote in before the rush,
+      budgeting for next year's project.</p>
+      <p><b>It is the same customer.</b> They are just at a different point in their thinking, and the
+      ad should meet them there.</p>
+      <p><b>This is also where Meta earns its place</b> &mdash; winter is when search volume falls but
+      scrolling does not, and when brand-building costs least. That is covered properly in the Meta
+      analysis.</p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>You said November and December are dead months. You are right about the work.</h2>
+    <p>But the jobs you build in March get decided in January. The question is whether you are visible
+    when that happens.</p>
+  </div>
+</div>
+
+<footer>
+  Prepared by Andrei Givero &middot; AG1 Consulting &middot; 5 September 2026<br>
+  For Josh at Stark Services and Development, Palestine, Texas. <b>Prepared following your question on
+  our call of 4 September 2026.</b> <b>Your description of the season &mdash; the fall slowdown, the
+  dead months of November and December, and the drought conditions affecting clearing work &mdash; is
+  quoted from that call and is your own account of your business. We have not independently verified
+  it.</b> <b>Statements about advertising auctions becoming less competitive when advertisers withdraw,
+  about how Google's bidding algorithms use historical data, and about how commercial projects are
+  planned ahead of construction are general commercial observations drawn from our own experience.</b>
+  <b>They are NOT researched findings about East Texas, your market or your account, and we do not yet
+  have month-by-month cost data for your campaigns. No cost per click, cost per lead, or seasonal cost
+  difference is stated, quantified or promised anywhere in this document.</b> <b>The month-by-month plan
+  is a working recommendation, not a contractual schedule, and would change as real data arrives.</b>
+  <b>Nothing here is a forecast, projection or guarantee, and no number of enquiries, leads, jobs or
+  revenue is promised.</b>
+</footer>
+</body></html>
