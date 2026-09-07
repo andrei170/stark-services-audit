@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stark Services - Competitor Analysis Part Two - The Meta Playbook - AG1</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--ink:#e6edf3;--mut:#9aa7b4;--line:#2a3340;--accent:#2f81f7;
+  --good:#3fb950;--bad:#f85149;--gradF:#f85149;--gradD:#e8702a;--gradC:#d29922;--gradB:#3fb950;--gradA:#2ea043;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--mut);font-weight:600}
+header{padding:46px 0 28px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 400px at 70% -10%,rgba(47,129,247,.18),transparent)}
+h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:15px}
+.hero{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:center;margin:34px 0 8px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.gradecard{border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center;position:relative;overflow:hidden}
+.gc-F{background:linear-gradient(160deg,#2a1410,#1c2330)}.gc-D{background:linear-gradient(160deg,#2a1c10,#1c2330)}
+.gc-C{background:linear-gradient(160deg,#2a2410,#1c2330)}.gc-B{background:linear-gradient(160deg,#102a1a,#1c2330)}
+.bigletter{font-size:96px;font-weight:900;line-height:1;position:relative}
+.bl-F{color:var(--gradF);text-shadow:0 0 40px rgba(248,81,73,.45)}
+.bl-D{color:var(--gradD);text-shadow:0 0 40px rgba(232,112,42,.45)}
+.bl-C{color:var(--gradC);text-shadow:0 0 40px rgba(210,153,34,.45)}
+.score100{font-size:18px;color:var(--mut);margin-top:6px;position:relative}
+.heroread h2{font-size:21px;font-weight:800;margin-bottom:10px}
+.heroread p{color:var(--mut);font-size:15.5px}
+.heroread .tag{display:inline-block;margin-top:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink);background:var(--panel)}
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+.h{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.rname{font-weight:600;font-size:15px}
+.bar{height:7px;background:#0b0f15;border-radius:99px;margin-top:9px;overflow:hidden}
+.fill{height:100%;border-radius:99px}
+.badge{font-weight:800;font-size:15px;min-width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#0d1117}
+.gF{background:var(--gradF)}.gD{background:var(--gradD)}.gC{background:var(--gradC)}.gB{background:var(--gradB);color:#06210f}.gA{background:var(--gradA);color:#06210f}
+.sc{font-size:12px;color:var(--mut);margin-top:3px}
+.flag{background:linear-gradient(160deg,#2a1410,#161b22);border:1px solid #6f2a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.flag .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--bad);font-weight:700;margin-bottom:8px}
+.win{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.win .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--good);font-weight:700;margin-bottom:8px}
+.warn{background:linear-gradient(160deg,#2a2410,#161b22);border:1px solid #6f5a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.warn .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--gradC);font-weight:700;margin-bottom:8px}
+.flag p,.win p,.warn p{color:var(--mut);font-size:14.5px;margin-bottom:9px}
+.flag p:last-child,.win p:last-child,.warn p:last-child{margin-bottom:0}
+.flag b,.win b,.warn b{color:var(--ink)}
+.flag ul,.win ul,.warn ul{margin:0 0 9px 20px;color:var(--mut);font-size:14.5px}
+.flag li,.win li,.warn li{margin-bottom:6px}
+.code{background:#0b0f15;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.85;color:var(--mut);overflow-x:auto}
+.code .ph{color:#ff9d94;font-weight:700}.code .ok{color:#84e0a8;font-weight:700}.code .c{color:#5b6672}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cmp th{text-align:left;padding:11px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line);font-weight:700}
+.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--mut);vertical-align:top}
+.cmp tr:last-child td{border-bottom:none}.cmp td b{color:var(--ink)}.cmp tr.you td{background:#241a12}
+.cmp .yes{color:var(--good);font-weight:700}.cmp .no{color:var(--bad);font-weight:700}
+.opp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.opp{grid-template-columns:1fr}}
+.ocard{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px;text-align:center}
+.ocard .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}
+.ocard .big{font-size:30px;font-weight:900;color:var(--good);margin:8px 0 2px}
+.ocard .small{font-size:13px;color:var(--mut)}
+.oppnote{color:var(--mut);font-size:14px;margin-top:14px}.oppnote b{color:var(--ink)}
+.arrow{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 2px;flex-wrap:wrap}
+.pill{font-size:60px;font-weight:900;line-height:1}
+.pill.from-F{color:var(--gradF)}.pill.from-D{color:var(--gradD)}.pill.from-C{color:var(--gradC)}
+.pill.to{color:var(--gradA)}
+.pilllab{font-size:12px;color:var(--mut);text-align:center;text-transform:uppercase;letter-spacing:.1em}
+.ar{font-size:34px;color:var(--mut)}
+ul.road{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){ul.road{grid-template-columns:1fr}}
+ul.road li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;font-size:14.5px}
+.road2 li{border-left-color:var(--good)}
+.cta{text-align:center;padding:40px 0 56px}
+.cta h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.cta p{color:var(--mut);font-size:15px}
+footer{color:var(--mut);font-size:12.5px;text-align:center;padding:22px 0 40px;line-height:1.7}
+.gscale{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 26px 20px;margin-top:16px}
+.gscale .gtitle{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);font-weight:700;margin-bottom:26px;text-align:center}
+.gtrack{position:relative;height:14px;border-radius:8px;background:linear-gradient(90deg,#f85149 0%,#f85149 18%,#e3833c 34%,#d4a72c 52%,#7ec46a 74%,#3fb950 100%);margin:0 4px}
+.gmark{position:absolute;top:-46px;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.gmark .gm-lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:700}
+.gmark .gm-val{font-size:19px;font-weight:900;line-height:1.15}
+.gmark:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:22px;transform:translateX(-50%);background:currentColor;opacity:.75}
+.gmark.now{color:var(--bad)}.gmark.now .gm-val{color:var(--bad)}
+.gmark.proj{color:var(--good)}.gmark.proj .gm-val{color:var(--good)}
+.gmark.proj{top:auto;bottom:-52px}
+.gmark.proj:after{top:auto;bottom:100%}
+.gdot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #0d1117}
+.gdot.now{background:var(--bad)}.gdot.proj{background:var(--good)}
+.gticks{display:flex;justify-content:space-between;margin:66px 4px 0;font-size:11px;letter-spacing:.08em;color:var(--mut);font-weight:700}
+@media(max-width:620px){.gmark .gm-lab{font-size:9px}.gmark .gm-val{font-size:16px}}
+</style></head><body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Competitor Analysis &middot; Part Two &middot; The Meta Playbook</div>
+    <h1>Stark Services and Development &mdash; What To Actually Run</h1>
+    <div class="sub">Prepared for Josh &middot; 7 September 2026 &middot; AG1 Consulting</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="gradecard gc-B">
+      <div class="bigletter" style="color:#3fb950;text-shadow:0 0 40px rgba(63,185,80,.45)">7</div>
+      <div class="score100">things they all<br>do the same way</div>
+    </div>
+    <div class="heroread">
+      <h2>Part one showed you who is advertising. This is what they are actually doing.</h2>
+      <p><b>Eleven firms, and once you read all their advertising together the pattern is
+      unmistakable.</b> Seven things nearly every one of them does the same way, and four of those
+      cost nothing to copy.</p>
+      <p><b>Then the part that matters: which of it we would do, which we would not, and what we would
+      open on instead.</b></p>
+      <span class="tag">Read from the Meta Ad Library &middot; 7 September 2026 &middot; discussed on the call of 11 September</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="h">What They All Do, And What It Costs To Match</div>
+    <div class="grid">
+      <div class="row"><div><div class="rname">Video, every single time</div><div class="sc">All eleven use video, from six seconds to seventy-nine. Not one static image in the whole set.</div></div><div class="badge gB">NEEDED</div></div>
+      <div class="row"><div><div class="rname">Multiple variants per firm</div><div class="sc">4L runs six, Double R four, Texas Homestead four, 3T three. One ad is not a campaign.</div></div><div class="badge gB">NEEDED</div></div>
+      <div class="row"><div><div class="rname">Facebook lead forms, not their website</div><div class="sc">Nearly all send to fb.me rather than their own site. Only 3T sends traffic to its own domain.</div></div><div class="badge gC">CHOICE</div></div>
+      <div class="row"><div><div class="rname">The owner, by name</div><div class="sc">Texas Homestead is "Justin", Hydromulching is "Caleb". First person, phone number in the copy.</div></div><div class="badge gA">EASY</div></div>
+      <div class="row"><div><div class="rname">Insured and licensed, stated</div><div class="sc">Almost all of them say it explicitly. It is the standard reassurance in this trade.</div></div><div class="badge gA">EASY</div></div>
+      <div class="row"><div><div class="rname">A deadline</div><div class="sc">Texas Homestead runs "Get a free on-site estimate before September 30th" in the headline.</div></div><div class="badge gA">EASY</div></div>
+      <div class="row"><div><div class="rname">Reviews in the headline</div><div class="sc">Get-R-Done leads with "100+ Google Reviews". Nobody else does.</div></div><div class="badge gA">EASY</div></div>
+    </div>
+    <p class="oppnote"><b>Four of those seven are free.</b> Putting your own name in the copy, saying
+    you are insured, running a dated offer and leading with your reviews cost nothing but the decision
+    to do them. <b>The two marked NEEDED are the ones that cost real money and time, and they are not
+    optional</b> &mdash; every firm in this market is on video, and the one that has lasted longest
+    runs six cuts of the same message.</p>
+  </section>
+
+  <section>
+    <div class="h">The Two Openings Nobody Is Taking</div>
+    <div class="win">
+      <div class="lab">Where we would put your money</div>
+      <p><b>Do not open on land clearing.</b> Eleven firms are fighting over it, two are competing on
+      price, and one has an eight-month head start with six creative variants. <b>It is the worst
+      ground in this market to walk onto cold.</b></p>
+      <p><b>Open on pads and site prep instead.</b> You told us pads are fast, high margin and decided
+      quickly. <b>Not one of eleven advertisers is bidding for them.</b> That is the definition of an
+      opening &mdash; a service you already make good money on, with a customer nobody else is talking
+      to.</p>
+      <p><b>Drainage is the second one</b>, and it belongs to the autumn. Nobody is advertising
+      prevention, and the week after a storm the searches spike for whoever is already running.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">The One Advert We Would Copy</div>
+    <div class="flag">
+      <div class="lab">Heaven to Earth Services &mdash; the strongest thing in the entire set</div>
+      <p><b>They tell the whole story of one job.</b> A doctor moving from California to thirty acres
+      in Smith County. An acre thick with brush, two more covered in years of deadfall. Five days of
+      work. <b>And then they publish what it cost: $12,500.</b></p>
+      <p><b>That is not a cheap-price advert, it is a credibility advert</b>, and the difference
+      matters enormously. Anybody who reads it knows what they are buying and roughly what it costs
+      &mdash; so the people who ring have already accepted the number.</p>
+      <p><b>It filters out the price shoppers before they reach your phone.</b> Cross Creek is doing
+      the opposite with "$1,500 a day" and will spend the next year fielding calls from people who
+      only heard the number.</p>
+      <p><b>We would build your first advert exactly this way.</b> One real job you have done, told
+      properly, with the price in it. You have better stories than they do.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">The Order</div>
+    <ul class="road">
+      <li><b>Fix the flat $100 conversion value first.</b> It costs nothing, and until it changes both Google and Meta will optimise towards your smallest and easiest jobs no matter what the adverts say.</li>
+      <li><b>Pads and site prep, told as one real job with the price in it.</b> Video, and more than one cut.</li>
+      <li><b>The four free things</b> &mdash; your name, insured and licensed, a dated offer, your reviews in the headline.</li>
+      <li><b>A Meta pixel.</b> Exactly one firm in this entire market has one, so nobody else can tell which of their ads produces work.</li>
+    </ul>
+    <div class="h" style="margin-top:24px">Then</div>
+    <ul class="road road2">
+      <li><b>Drainage into the autumn</b>, sold on prevention while the ground is still workable</li>
+      <li><b>Land clearing third</b>, once something is working, and never on price</li>
+      <li><b>Commercial and agricultural site work</b>, which nobody in this market is speaking to at all</li>
+      <li><b>Own Anderson County before Bronco does</b> &mdash; nobody local advertises, so it is the cheapest ground you will ever buy</li>
+    </ul>
+  </section>
+
+  <div class="cta">
+    <h2>Everybody is selling clearing. Nobody is selling pads.</h2>
+    <p>You already make better money on the work nobody is advertising for. <b>That is where we would
+    start, and the reason is not clever &mdash; it is just that the ground is empty.</b></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Prepared by Andrei Givero &middot; AG1 Consulting &middot; 7 September 2026</p>
+    <p>For Josh Hildebrandt of Stark Services and Development, Palestine, Texas.
+    <b>All advertiser names, ad copy, prices, formats and dates referred to here were read from Meta's
+    public Ad Library on 7 September 2026 and reflect what was visible on that date only</b>; the
+    underlying detail is set out in part one of this analysis. <b>Meta does not publish spend,
+    impressions or results for commercial advertisers</b>, so nothing here states or estimates what any
+    competitor spends or earns, and the length of time an advert has run is <b>not proof that it is
+    profitable</b> &mdash; only that the advertiser has chosen to keep it live. The prices quoted from
+    competitor advertising, $1,500 a day and a $12,500 project, are <b>quoted from their own copy, have
+    not been verified, and are not a guide to what you should charge.</b> <b>The recommendations on
+    this page are our opinion based on that public advertising and on what you have told us about your
+    business; they are not a forecast and no claim is made or implied about what any of this would
+    produce in leads, jobs or revenue.</b> Which service to open on depends on your capacity and on
+    what a job is actually worth to you by type, <b>neither of which we have measured</b>. Company names
+    and trade marks belong to their respective owners and are used for identification only.</p>
+  </div>
+</footer>
+</body></html>
